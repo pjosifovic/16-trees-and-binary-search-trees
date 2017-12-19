@@ -50,3 +50,5 @@ BinarySearchTree.prototype.find = function(value){
 BinarySearchTree.prototype.remove = function(value){
 
 }
+
+module.exports = BinarySearchTree;
