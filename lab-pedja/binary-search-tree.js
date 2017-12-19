@@ -45,10 +45,25 @@ BinarySearchTree.prototype.find = function(value){
     return null;
 };
 
-// TODO write .remove
 
 BinarySearchTree.prototype.remove = function(value){
+  // TODO add what if value is not found in BST
 
-}
+  if(value < this.value){
+    this.left = this.left && this.left.remove(value);
+  } else if (value > this.value){
+    this.right = this.right && this.right.remove(value);
+  } else if (this.left && this.right) {
+    this.value = this.right.findMinValue();
+    this.right = this.right.remove(this.value);
+  } else {
+    return this.left || this.right;
+  }
+  return this;
+};
+
+BinarySearchTree.prototype.findMinValue = function(){
+  return this.left ? this.left.findMinValue() : this.value;
+};
 
 module.exports = BinarySearchTree;
