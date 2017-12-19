@@ -1,0 +1,17 @@
+{
+  "name": "lab-pedja",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -t --coverage",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "jest": "^22.0.1"
+  }
+}
