@@ -1,6 +1,6 @@
 'use strict';
 
-const BinarySearchTree = require('../binary-search-tree');
+const BinarySearchTree = require('../lib/binary-search-tree');
 
 let bst = new BinarySearchTree(10);
 bst.insert(5);
@@ -17,10 +17,10 @@ describe('binary-search-tree.js', () => {
     expect(bst.left.right.value).toEqual(8);    
   });
   test('INSERT method should return throw an error if value already exist', () => {
-    expect(()=> {bst.insert(8);}).toThrow();
+    expect(()=> bst.insert(8)).toThrow();
   });
   test('INSERT method should return an error is passed in value is not a number', () => {
-    expect(()=> {bst.insert('testing');}).toThrow();
+    expect(()=> bst.insert('testing')).toThrow();
   });
 
   // FIND testing

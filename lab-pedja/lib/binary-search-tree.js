@@ -4,7 +4,6 @@ const BinarySearchTree = function(value){
   this.value = value;
   this.left = null;
   this.right = null;
-
 };
 
 BinarySearchTree.prototype.insert = function(value) {
@@ -19,7 +18,7 @@ BinarySearchTree.prototype.insert = function(value) {
       this.left = new BinarySearchTree(value);
       return;
     }
-    this.left.insert(value); // vinicio - recursive call
+    this.left.insert(value);
     return;
   }
   if(!this.right){
@@ -45,9 +44,11 @@ BinarySearchTree.prototype.find = function(value){
     return null;
 };
 
+BinarySearchTree.prototype.findMinValue = function(){
+  return this.left ? this.left.findMinValue() : this.value;
+};
 
 BinarySearchTree.prototype.remove = function(value){
-  // TODO add what if value is not found in BST
 
   if(value < this.value){
     this.left = this.left && this.left.remove(value);
@@ -60,10 +61,6 @@ BinarySearchTree.prototype.remove = function(value){
     return this.left || this.right;
   }
   return this;
-};
-
-BinarySearchTree.prototype.findMinValue = function(){
-  return this.left ? this.left.findMinValue() : this.value;
 };
 
 module.exports = BinarySearchTree;
